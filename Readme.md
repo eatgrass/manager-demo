@@ -1,4 +1,4 @@
-# Environement Variables
+# Environment Variables
 
 ```sh
 # database file path, default: {workDir}/data
