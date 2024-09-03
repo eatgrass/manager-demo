@@ -45,5 +45,5 @@ jobs:
           title: "Automated Build"
           prerelease: false
           files: |
-            *.jar
+            target/*.jar
 
