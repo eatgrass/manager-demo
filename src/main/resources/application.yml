@@ -1,0 +1,19 @@
+spring:
+    application.name: manager
+
+server:
+  error:
+    include-message: always
+    include-exception: true
+    path: /error
+
+  tomcat:
+    basedir: "./"
+    accesslog:
+      enabled: true
+      directory: logs
+      prefix: access_log
+      suffix: .log
+      pattern: '[%{yyyy-MM-dd HH:mm:ss.S}t] "%r" %s %D From %{manager.auth-user-id}r "%{manager.access-log-msg}r"'
+
+debug: true
