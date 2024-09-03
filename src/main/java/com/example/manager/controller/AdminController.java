@@ -24,26 +24,26 @@ import java.util.Arrays;
 @RequestMapping("/admin")
 public class AdminController {
 
-       @Autowired
-       private AdminService adminService;
+    @Autowired
+    private AdminService adminService;
 
-       @PostMapping("/addUser")
-       public ResponseEntity<User> addUser(@RequestBody AddUserRequest payload) {
+    @PostMapping("/addUser")
+    public ResponseEntity<User> addUser(@RequestBody AddUserRequest payload) {
 
-              if (payload.userId() == null) {
-                     throw new ParameterException("userId required");
-              }
+        if (payload.userId() == null) {
+            throw new ParameterException("userId required");
+        }
 
-              if (CollectionUtils.isEmpty(payload.endpoint())) {
-                     throw new ParameterException("endpoint required");
-              }
+        if (CollectionUtils.isEmpty(payload.endpoint())) {
+            throw new ParameterException("endpoint required");
+        }
 
-              Set<Permission> permissions = Arrays.stream(payload.endpoint()).map(Permission::parse)
-                            .collect(Collectors.toSet());
-              User user = new User(payload.userId(), Role.user, permissions);
-              adminService.addUser(user);
+        Set<Permission> permissions = Arrays.stream(payload.endpoint()).map(Permission::parse)
+                .collect(Collectors.toSet());
+        User user = new User(payload.userId(), Role.user, permissions);
+        adminService.addUser(user);
 
-              return ResponseEntity.ok(user);
-       }
+        return ResponseEntity.ok(user);
+    }
 
 }

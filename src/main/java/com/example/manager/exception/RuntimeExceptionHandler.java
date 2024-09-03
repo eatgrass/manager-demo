@@ -25,20 +25,4 @@ public class RuntimeExceptionHandler {
 
     }
 
-    // @ExceptionHandler(AuthorizationException.class)
-    // public void handle(HttpServletResponse response,
-    // AuthorizationException e) throws ServletException, IOException {
-
-    // request.setAttribute(RequestDispatcher.ERROR_MESSAGE, e.getMessage());
-    // response.sendError(HttpStatus.UNAUTHORIZED.value());
-
-    // }
-
-    // @ExceptionHandler(UnauthorizedException.class)
-    // public void handle(HttpServletResponse response,
-    // UnauthorizedException e) throws ServletException, IOException {
-    // request.setAttribute(RequestDispatcher.ERROR_MESSAGE, e.getMessage());
-    // response.sendError(HttpStatus.FORBIDDEN.value());
-
-    // }
 }

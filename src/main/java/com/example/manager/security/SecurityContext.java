@@ -10,12 +10,11 @@ import jakarta.servlet.http.HttpServletRequest;
 
 public class SecurityContext {
 
-
     public static AuthUser getCurrentUser() {
 
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
 
-        if(requestAttributes == null) {
+        if (requestAttributes == null) {
             return null;
         }
         HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
@@ -26,13 +25,12 @@ public class SecurityContext {
 
         RequestAttributes requestAttributes = RequestContextHolder.getRequestAttributes();
 
-        if(requestAttributes == null) {
+        if (requestAttributes == null) {
             return null;
         }
 
         HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
         return (Long) request.getAttribute(ServletAttributes.AUTH_USER_ID);
     }
-
 
 }

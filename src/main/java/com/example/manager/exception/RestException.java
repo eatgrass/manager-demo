@@ -12,5 +12,5 @@ public class RestException extends RuntimeException {
     public int getStatus() {
         return status;
     }
-    
+
 }
